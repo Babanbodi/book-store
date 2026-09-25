@@ -4,9 +4,10 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    color: #1f2937;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #0a0a0a;
+    color: #dcfce7;
+    line-height: 1.5;
 }
 
 .container {
@@ -15,9 +16,20 @@ body {
 }
 
 .site-header {
-    background: #111827;
+    background: #000;
     color: white;
     padding: 18px 0;
+    position: relative;
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+    left: -10%;
+    height: 3px;
+    background: #22c55e;
 }
 
 .nav {
@@ -41,12 +53,15 @@ nav {
 }
 
 nav a {
-    color: #e5e7eb;
+    color: #86efac;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
 }
 
 nav a:hover {
-    color: white;
+    color: #22c55e;
+    border-bottom-color: #22c55e;
 }
 
 main.container {
@@ -55,6 +70,8 @@ main.container {
 
 h1 {
     margin-top: 0;
+    color: #f0fdf4;
+    letter-spacing: .02em;
 }
 
 .stats {
@@ -73,11 +90,12 @@ h1 {
 .card,
 .form-card,
 .filters {
-    background: white;
-    border-radius: 10px;
+    background: #111111;
+    border: 1px solid #166534;
+    border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
 }
 
 .stats .card p {
@@ -104,9 +122,18 @@ h1 {
 input,
 select {
     padding: 10px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #166534;
+    background: #0a0a0a;
+    color: #f0fdf4;
     border-radius: 6px;
     min-width: 180px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+    border-color: #86efac;
 }
 
 fieldset {
@@ -129,19 +156,25 @@ fieldset {
     display: inline-block;
     border: 0;
     border-radius: 6px;
-    background: #2563eb;
+    background: #16a34a;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #22c55e;
+    color: #052e16;
 }
 
 .button.secondary {
-    background: #64748b;
+    background: #166534;
 }
 
 .button.danger {
-    background: #dc2626;
+    background: #14532d;
 }
 
 .quick-links {
@@ -153,19 +186,25 @@ fieldset {
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: #111111;
     margin-bottom: 20px;
+    border: 1px solid #166534;
 }
 
 th,
 td {
     padding: 12px;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #166534;
     text-align: left;
 }
 
 th {
-    background: #e5e7eb;
+    background: #052e16;
+    color: #bbf7d0;
+}
+
+tbody tr:hover {
+    background: #162b1d;
 }
 
 .actions {
@@ -180,22 +219,22 @@ th {
 .alert {
     padding: 14px;
     border-radius: 7px;
-    background: #e0f2fe;
+    background: #14532d;
     margin-bottom: 20px;
 }
 
 .alert.error {
-    background: #fee2e2;
-    color: #991b1b;
+    background: #052e16;
+    color: #86efac;
 }
 
 .alert.success {
-    background: #dcfce7;
-    color: #166534;
+    background: #166534;
+    color: #dcfce7;
 }
 
 .empty {
-    color: #64748b;
+    color: #86efac;
 }
 
 .form-card {
@@ -208,8 +247,8 @@ th {
 
 .site-footer {
     padding: 25px 0;
-    background: #111827;
-    color: #cbd5e1;
+    background: #000000;
+    color: #86efac;
 }
 
 @media (max-width: 700px) {
